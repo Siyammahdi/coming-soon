@@ -1,67 +1,49 @@
 import Image from "next/image";
+import { NotifyForm } from "./components/notify-form";
 
 export default function Home() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert h-5 w-[100px]"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the{" "}
-            <code className="rounded bg-black/[.06] px-1.5 py-0.5 font-mono text-[0.9em] dark:bg-white/[.08]">
-              page.tsx
-            </code>{" "}
-            file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="relative flex min-h-full flex-1 flex-col overflow-hidden">
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0"
+      >
+        <div className="animate-pulse-soft absolute -left-[12%] top-[-8%] h-[42vmin] w-[42vmin] rounded-full bg-[radial-gradient(circle,var(--glow),transparent_68%)]" />
+        <div className="animate-pulse-soft absolute -right-[8%] bottom-[-10%] h-[48vmin] w-[48vmin] rounded-full bg-[radial-gradient(circle,var(--glow),transparent_70%)] [animation-delay:2.2s]" />
+        <div className="absolute inset-0 bg-[linear-gradient(180deg,transparent_0%,color-mix(in_srgb,var(--paper)_55%,transparent)_100%)]" />
+      </div>
+
+      <main className="relative z-10 mx-auto flex w-full max-w-5xl flex-1 flex-col items-center justify-center px-6 py-10 sm:px-8 sm:py-14">
+        <div className="animate-rise animate-float relative -mb-2 w-full max-w-[44rem] sm:-mb-4">
+          <Image
+            src="/under-construction.gif"
+            alt="Designer building a website under construction"
+            width={1024}
+            height={768}
+            preload
+            unoptimized
+            className="mx-auto h-auto w-full select-none object-contain"
+            sizes="(max-width: 768px) 92vw, 704px"
+          />
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert h-[14px] w-4"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={14}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+        <div className="flex w-full max-w-xl flex-col items-center text-center">
+          <h1 className="animate-rise delay-1 font-display text-[clamp(2.5rem,7vw,4.35rem)] font-bold leading-[0.95] tracking-tight text-ink">
+            Coming soon
+          </h1>
+
+          <span
+            aria-hidden
+            className="animate-draw mt-4 h-px w-14 bg-accent"
+          />
+
+          <p className="animate-rise delay-2 mt-4 max-w-xs text-[0.95rem] leading-relaxed text-ink-muted sm:text-base">
+            Something new is taking shape.
+          </p>
+
+          <div className="animate-rise delay-3 mt-7 flex w-full justify-center">
+            <NotifyForm />
+          </div>
         </div>
       </main>
     </div>
